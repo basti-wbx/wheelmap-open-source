@@ -1,0 +1,28 @@
+.ticker
+  = t('.results.ticker', :count => @result.length)
+
+- unless @result.empty?
+  %ul#search-results.unstyled
+    = render :partial => 'entry', :collection => @result
+- else
+  #search-no-results
+    %h4=t('.no-results.headline', :query => params[:q])
+
+    .row-fluid
+      .span5
+        %p=t('.no-results.try_this.intro')
+
+        %ul
+          %li=t('.no-results.try_this.spell_check').html_safe
+          %li=t('.no-results.try_this.address').html_safe
+
+      .span7
+        .alert.alert-info
+          %i.icon-info-sign
+          %p
+            =t('.no-results.hint.info')
+            %br
+            =t('.no-results.hint.example').html_safe
+            %br
+            =t('.no-results.hint.work_in_progress')
+

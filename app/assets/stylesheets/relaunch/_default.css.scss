@@ -1,0 +1,130 @@
+html,body {
+  margin:0;
+  padding:0;
+  height:100%; /* braucht es fÃ¼r die min-height des Containers */
+}
+
+body {
+  width: 100%;
+  font-family: $helvetica;
+  margin: 0;
+  padding: 0;
+  color: #5C554E;
+}
+
+
+/* @group Allgemein ================================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+::-moz-selection, ::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* @end */
+
+.content {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
+.mobile {
+	display: none;
+}
+
+
+@media screen and (max-width:760px) {
+	.mobile {
+		display: block;
+	}
+	.desktop {
+		display: none;
+	}
+}
+
+@include wheelchair(yes, $wheelchair-yes);
+@include wheelchair(limited, $wheelchair-limited);
+@include wheelchair(no, $wheelchair-no);
+@include wheelchair(unknown, $wheelchair-unknown);
+
+.dropdown-menu {
+  @include border-radius($borderRadiusSmall);
+  @include box-sizing(border-box);
+}
+
+.dropdown-accordion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; // display: block on open
+  float: left;
+  min-width: 200px;
+  margin: 2px 0 0;
+  background-color: $dropdownBackground;
+  border: 1px solid $dropdownBorder;
+  z-index: $zindexDropdown;
+  @include border-radius(3px);
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  @include box-sizing(border-box);
+}
+
+.open > .dropdown-accordion {
+  display: block;
+}
+
+.pull-right > .dropdown-accordion {
+  right: 0;
+  left: auto;
+}
+
+// Gradient for headlines e.g. node popup or node detail page
+.headline-gradient {
+  @include headline-gradient();
+  @include text-shadow(0px 1px 2px rgba($black, 0.5));
+  color: $white;
+
+  a {
+    color: $white;
+  }
+
+  address,
+  .breadcrumbs {
+    color: $grayLighter;
+  }
+
+  .breadcrumbs {
+    @include clearfix();
+    opacity: 0.75;
+
+    li {
+      float: left;
+      padding-right: 3px;
+      font-size: $fontSizeMini;
+
+      .icon-angle-right {
+        line-height: inherit;
+        font-size: $fontSizeLarge;
+        float: left;
+        padding: 0 7px 0 5px;
+      }
+
+      &:first-of-type .icon-angle-right {
+        display: none;
+      }
+    }
+  }
+}
+
+.wheelmap-btn {
+  @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+}

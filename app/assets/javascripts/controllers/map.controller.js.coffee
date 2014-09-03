@@ -1,0 +1,178 @@
+Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
+  needs: ['toolbar', 'map']
+  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom']
+  
+  latBinding: 'controllers.map.lat'
+  lonBinding: 'controllers.map.lon'
+  zoomBinding: 'controllers.map.zoom'
+  qBinding: 'controllers.toolbar.searchString'
+  bbox: null
+
+  status: Ember.computed.defaultTo('lastStatusFilters')
+  categories: Ember.computed.defaultTo('lastCategoryFilters')
+
+  lastStatusFilters: Ember.aliasMethod('retrieveCookieValue')
+  lastCategoryFilters: Ember.aliasMethod('retrieveCookieValue')
+
+  retrieveCookieValue: ((key, value)->
+    lastStatusFilters = $.cookie(key.decamelize(), value)
+
+    unless lastStatusFilters?
+      return null
+
+    try
+      keys = JSON.parse(lastStatusFilters)
+    catch e
+      # Catch JSON syntax errors in invalid cookie value
+      unless e instanceof SyntaxError
+        throw e
+
+      return null
+
+    return keys.join(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+  ).property()
+
+  activeStatusFiltersDidChange: (->
+    lastStatusFilters = null
+    activeStatusFilters = @get('controllers.toolbar.activeStatusFilters')
+
+    if activeStatusFilters.get('length') isnt @get('controllers.toolbar.statusFilters.length')
+      lastStatusFilters = JSON.stringify(activeStatusFilters.getEach('key'))
+
+    @set('lastStatusFilters', lastStatusFilters)
+  ).observes('controllers.toolbar.activeStatusFilters')
+
+  activeCategoryFiltersDidChange: (->
+    lastCategoryFilters = null
+    activeCategoryFilters = @get('controllers.toolbar.activeCategories')
+
+    if activeCategoryFilters.get('length') isnt @get('controllers.toolbar.length')
+      lastCategoryFilters = JSON.stringify(activeCategoryFilters.getEach('identifier'))
+
+    @set('lastCategoryFilters', lastCategoryFilters)
+  ).observes('controllers.toolbar.activeCategories')
+
+  queryCategoriesDidChange: (->
+    queryCategories = @get('categories')
+    categories = @get('controllers.toolbar')
+
+    if categories.get('length') is 0
+      return
+
+    activeCategories = do ->
+      unless queryCategories?
+        return categories
+
+      if queryCategories is true
+        return []
+
+      keys = queryCategories.split(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      categories.filter (category)->
+        keys.contains(category.get('identifier'))
+
+    @set('controllers.toolbar.activeCategories', activeCategories)
+  ).observes('controllers.toolbar.@each', 'categories')
+
+  queryStatusDidChange: (->
+    queryStatus = @get('status')
+    statusFilters = @get('controllers.toolbar.statusFilters')
+
+    activeStatusFilters = do ->
+      unless queryStatus?
+        return statusFilters
+
+      if queryStatus is true
+        return []
+
+      keys = queryStatus.split(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      statusFilters.filter (status)->
+        keys.contains(status.get('key'))
+
+    @set('controllers.toolbar.activeStatusFilters', activeStatusFilters)
+  ).observes('controllers.toolbar.statusFilters.@each', 'status')
+
+  queryBboxDidChange: (->
+    bbox = @get('bbox')
+
+    unless bbox
+      return
+
+    bboxPart = bbox.split(',')
+
+    if bboxPart.length == 4
+      @set('controllers.map.bbox', L.latLngBounds(L.latLng(bboxPart[0], bboxPart[2]), L.latLng(bboxPart[1], bboxPart[3])))
+
+    @set('bbox', null)
+  ).observes('bbox')
+
+  actions:
+    transitionToActiveCategories: ->
+      activeCategories = @get('controllers.toolbar.activeCategories')
+      queryCategories = null
+
+      if activeCategories.get('length') isnt @get('controllers.toolbar.length')
+        queryCategories = activeCategories.getEach('identifier').join(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      this.transitionToRoute
+        queryParams:
+          categories: queryCategories
+
+    transitionToActiveStatusFilter: ->
+      activeStatusFilters = @get('controllers.toolbar.activeStatusFilters')
+      queryStatusFilters = null
+
+      if activeStatusFilters.get('length') isnt @get('controllers.toolbar.statusFilters.length')
+        queryStatusFilters = activeStatusFilters.getEach('key').join(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      this.transitionToRoute
+        queryParams:
+          status: queryStatusFilters
+
+Wheelmap.MapSessionControllerMixin.SEPERATOR = '.'
+
+Wheelmap.MapController = Ember.Controller.extend
+  needs: 'toolbar'
+  poppingNode: null
+
+  init: ()->
+    @_super()
+
+    properties = {}
+
+    if $.cookie('last_lat')?
+      properties.lat = $.cookie('last_lat')
+
+    if $.cookie('last_lon')?
+      properties.lon = $.cookie('last_lon')
+
+    if $.cookie('last_zoom')?
+      properties.zoom = parseInt($.cookie('last_zoom'), 10)
+
+    @setProperties(properties)
+
+  defaultCenter: (->
+    L.latLng(52.50521, 13.4231)
+  ).property()
+  defaultZoom: 14
+
+  center: Ember.computed.defaultTo('defaultCenter')
+  zoom: Ember.computed.defaultTo('defaultZoom')
+  latBinding: 'center.lat'
+  lonBinding: 'center.lng'
+
+  mapViewDidChange: (()->
+    center = @get('center')
+
+    $.cookie('last_lat', center.lat, { path: '/' } )
+    $.cookie('last_lon', center.lng, { path: '/' } )
+    $.cookie('last_zoom', @get('zoom'), { path: '/' })
+  ).observes('center', 'zoom')
+
+  actions:
+    openPopup: (nodeId)->
+      @transitionToRoute('popup', nodeId)
+
+    closePopup: ->
+      @transitionToRoute('index')

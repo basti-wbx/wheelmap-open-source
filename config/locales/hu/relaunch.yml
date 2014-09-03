@@ -1,0 +1,99 @@
+hu:
+  activerecord:
+    attributes:
+      poi:
+        name: Név
+        type: Típus
+        address: Cím
+        website: Honlap
+        phone: Telefon
+        note: Megjegyzés
+        address_street: Utca
+        address_housenumber: Házszám
+        address_postcode: Irányítószám
+        address_city: Város
+  faq:
+    answers:
+      0: Bármikor megváltoztathatod egy hely besorolását. Csak válaszd ki a megfelelő színjelzést és kattints a "Mentés" gombra - Kész is!
+      1: Bejelentkezett felhasználóként egy hely bármelyik adatát megadhatod vagy kijavíthatod. Kattints a "Szerkesztés" gombra és javítsd vagy pótold az adatokat a szövegmezőben.
+      2: További adatokat (pl. "Ez a hely mobil rámpával rendelkezik") a hozzászólásként tudsz hozzáadni. Kattints a "Szerkesztés", majd az "Új hozzászólás" gombokra.
+    headline: Probléma van ezzel a hellyel?
+    questions:
+      0: Rossz besorolás.
+      1: A hely adatai helytelenek vagy hiányoznak.
+      2: Több információval rendelkezem erről a helyről.
+  header:
+    navigation:
+      about_wheelmap: A Wheelmapről
+      choose_language: Válassz nyelvet!
+      contact: Elérhetőség
+      map: Térkép
+      projects: Projektek
+    toolbar:
+      categories: Kategóriák
+  home:
+    index:
+      overlay:
+        button: Rendben, mehet!
+        categories: Szűrj kategóriák szerint
+        filter: Szűrj az akadálymentesség szerint
+        headline: 'Találd meg és jelöld be az akadálymentes helyeket a Wheelmap.org segítségével - Világszerte, ingyen. Ilyen egyszerű:'
+        lookup: Keress rá egy helyre
+        secondary_headline: 'Jelzőlámpáink színei jelzik a helyek akadálymentességét:'
+  nodes:
+    new:
+      form:
+        legend: A hely elhelyezkedése
+        location: Kattints a térképre és helyezd a jelölőt a pontos pozícióra.
+    node_data:
+      address: 'Cím:'
+      contact_details: 'Elérhetőségek:'
+    node_edit:
+      details: Részletek
+      edit: Szerkesztés
+    node_map:
+      map: 'Térkép:'
+    node_note:
+      comment: 'Megjegyzés:'
+    node_photos:
+      add: Hozzáad
+      photos_of_this_place: 'Fényképek a helyről:'
+      upload: Feltöltés
+    node_similar:
+      similar: 'Hasonló helyek: %{name}'
+    node_status:
+      accessible_toilet: 'Kerekesszékkel is használható mosdó:'
+      premium: '%{name} szerint ez a hely'
+      wheelchair_accessibility: 'Kerekesszékes akadálymentesség:'
+    node_streetview:
+      streetview: 'Utcanézet:'
+    show:
+      header:
+        meta:
+          description: Derítsd ki a Wheelmap.org-on, hogy ez a hely kerekesszékkel akadálymentes-e, vagy egészítsd ki további információkkal és képekkel.
+          title: '%{name} a Wheelmap.org-on '
+      share:
+        email: E-mail
+        facebook: Facebook
+        text: 'Ezt a helyet találtam a Wheelmap.org oldalon: %{name}'
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: Sajnáljuk, de nem találtunk "%{query}" nevű helyet.
+        hint:
+          example: <strong>Példa:</strong> Budapest, Magyarország
+          info: Keresőszolgáltatásunk csak név és/vagy cím alapján keres. Kérjük, a keresésnél ezért a hely pontos nevét vagy címét (pl. utcanév és/vagy város) add meg. A kereső nem ad találatot olyan általános megnevezésekre, mint pl. "étterem" vagy "mozi"!
+          work_in_progress: Keményen dolgozunk, hogy a keresést könnyebben és ösztönösebben használhatóvá tegyük a jövőben.
+        try_this:
+          address: Kérjük, pontosítsd <strong>a címet</strong>.
+          intro: 'Próbáld így:'
+          spell_check: Ellenőrizd <strong>a helyesírási hibákat</strong> a beírt szövegben.
+      results:
+        ticker:
+          one: '%{count} eredmény:'
+          other: '%{count} eredmény:'
+    timeout:
+      headline: Ó, a mi hibánk
+      info: A keresési funkciónk átmenetileg nem volt elérhető.
+      repeat_search: Próbáld újra

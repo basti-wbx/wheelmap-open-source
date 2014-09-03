@@ -1,0 +1,26 @@
+=icon($number, $y-add: 0)
+  background-repeat: no-repeat
+  height: 16px
+  padding-left: 20px
+  +image(unquote("icons.png"), 0, -20px * $number + $y-add)
+  +inline-block
+  vertical-align: baseline
+
+
+.print
+  +icon(4)
+
+
+.mail
+  +icon(5)
+
+
+.link
+  +icon(6)
+
+
+// TMP:
+.refresh
+  +icon(0)
+  +image(unquote("icons/arrow-circle-double.png"))
+

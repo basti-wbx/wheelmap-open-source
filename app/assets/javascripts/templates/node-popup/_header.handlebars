@@ -1,0 +1,17 @@
+{{! header }}
+<header class="node-popup-header headline-gradient">
+    <a {{ bind-attr href=showPath }}>
+        <h2 itemprop="name">{{headline}}</h2>
+        {{#if address}}
+            <address>{{address}}</address>
+        {{/if}}
+
+        <ol class="breadcrumbs unstyled">
+            {{#each breadcrumbs}}
+                <li><i class="icon-angle-right"></i>{{this}}</li>
+            {{/each}}
+        </ol>
+    </a>
+
+    <a {{ action 'close' }} class="leaflet-popup-close-button">×</a>
+</header>

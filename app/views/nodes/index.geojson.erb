@@ -1,0 +1,5 @@
+<%= generate_json({
+    :type => 'FeatureCollection',
+    :bbox => [@left, @bottom, @right, @top],
+    :features => prepare_nodes }).html_safe
+%>

@@ -1,0 +1,5 @@
+%h2.large.marge=t('devise.mailer.confirmation_instructions.subject')
+%p.large.marge=t('devise.mailer.confirmation_instructions.landing_page')
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  = link_to( t('devise.confirmations.link'), new_confirmation_path(resource_name))
+

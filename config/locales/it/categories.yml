@@ -1,0 +1,178 @@
+it:
+  poi:
+    category:
+      accommodation: Alloggi
+      education: Educazione
+      food: Alimenti
+      government: Governo
+      health: Salute
+      leisure: Tempo Libero
+      misc: Altro
+      money_post: "Bancoposta"
+      public_transfer: "Mezzi pubblici"
+      shopping: Shopping
+      sport: Sport
+      tourism: Turismo
+      unknown: Sconosciuto
+    name:
+      accommodation:
+        beach_resort: "Albergo sulla spiaggia"
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: "Campeggio"
+        caravan_site: "Area caravan e camper"
+        chalet: Casetta turistica
+        dormitory: Dormitorio
+        guest_house: "Affittacamere, Pensione"
+        hostel: Ostello
+        hotel: Albergo
+        motel: Motel
+      education:
+        college: College
+        driving_school: "Autoscuola"
+        kindergarten: Scuola d'infanzia
+        library: Biblioteca
+        museum: Museo
+        school: Scuola
+        university: Università
+      food:
+        bar: American bar
+        biergarten: Birreria all'aperto
+        cafe: Bar
+        drinking_water: "Acqua potabile"
+        fast_food: "Fast food"
+        ice_cream: "Gelateria"
+        pub: Pub
+        restaurant: Ristorante
+      government:
+        courthouse: Tribunale
+        embassy: Ambasciata
+        government: "Agenzia del Governo"
+        police: Polizia
+        public_building: "Edificio pubblico"
+        townhall: Municipio
+      health:
+        dentist: Dentista
+        doctors: Medici
+        hearing_aids: "Apparecchio per l'udito"
+        hospital: Ospedale
+        medical_supply: "Rifornimento sanitario"
+        pharmacy: Farmacia
+        social_facility: "Servizi sociali"
+        veterinary: Ambulatorio Veterinario
+      leisure:
+        arena: Arena
+        brothel: Casinò
+        casino: Casinò
+        cinema: Cinema
+        community_center: "Centro Comunitario"
+        gallery: Galleria d'arte
+        nightclub: Night club
+        playground: Parco giochi
+        sauna: Sauna
+        stripclub: Strip club
+        theatre: Teatro
+        zoo: Zoo
+      misc:
+        company: "Compagnia (Officio)\n"
+        estate_agent: "Agente Immobiliare"
+        insurance: Assicurazione
+        lawyer: Avvocato
+        place_of_worship: "Luogo di culto"
+        toilets: Bagno pubblico
+      money_post:
+        atm: Bancomat
+        bank: Banca
+        bureau_de_change: "Ufficio cambia valute"
+        post_box: "Cassetta postale"
+        post_office: "Ufficio postale"
+      public_transfer:
+        aerodrome: Aeroporto
+        bicycle_parking: "Parcheggio per biciclette"
+        bicycle_rental: "Noleggio biciclette"
+        boatyard: Cantiere navale
+        bus_station: "Stazione degli autobus"
+        bus_stop: "Fermata dell'autobus"
+        cable_car: "Funivia"
+        car_rental: " Autonoleggio "
+        car_sharing: "Parcheggio auto condivise"
+        chair_lift: "Seggiovia"
+        ferry: Traghetto
+        ferry_terminal: "Terminal traghetti"
+        fuel: "Distributore di benzina"
+        halt: Stazione non presidiata
+        light_rail: "Ferrovia"
+        parking: Parcheggio
+        parking_aisle: "Corsia di sosta"
+        platform: Binario
+        station: "Metropolitana"
+        subway_entrance: "Ingresso della Metropolitana"
+        terminal: "Terminal dell'aeroporto"
+        tram_stop: "Fermata del tram"
+      shopping:
+        alcohol: Bevande alcoliche
+        bakery: Panetteria
+        beauty: "Salone di Belleza"
+        beverages: Bevande
+        bicycle: "Negozio di biciclette"
+        books: Libreria
+        butcher: Macelleria
+        car_repair: "Autofficina"
+        car_shop: "Autoconcessionaria"
+        chemist: Farmacia
+        clothes: Abbigliamento
+        computer: Negozio di computers
+        confectionery: "Dolci"
+        convenience: Minimarket
+        deli: Deli
+        department_store: "Grande magazzino"
+        doityourself: "Fai da te"
+        dry_cleaning: "Lavanderia"
+        electronics: Negozio d'elettronica
+        fabric: "Negozio di Tessuti"
+        farm_shop: "Negozio di una Fattoria"
+        florist: Fiorista
+        furniture: Arredamento
+        garden_centre: "Centro per il giardinaggio"
+        gift: "Negozio di Articoli da Regalo "
+        hairdresser: Parrucchiere
+        hardware: Ferramenta
+        jewelry: Gioielleria
+        kiosk: Chiosco
+        laundry: Lavanderia
+        mall: "Centro commerciale"
+        optician: Ottico
+        organic: "Negozio di Cibo Organico"
+        outdoor: "Negozio Outdoor"
+        pet: "Negozio di Animali"
+        photo: Fotografo
+        second_hand: "Seconda Mano"
+        shoes: Calzature
+        sports: Sports
+        stationery: Cartoleria
+        supermarket: Supermercato
+        toys: Giocattoli
+        travel_agency: "Agenzia di Viaggi"
+        video: "Negozio di video noleggio"
+      sport:
+        pitch: "Campo Sportivo"
+        sports_centre: "Centro sportivo"
+        stadium: Stadio
+        swimming: Nuoto
+        swimming_pool: "Piscina"
+      tourism:
+        archaeological_site: "Sito archeologico"
+        arts_centre: "Centro d'arte"
+        artwork: Opera d'arte
+        attraction: Attrazione turistica
+        battlefield: Campo di battaglia
+        beach: Spiaggia
+        beacon: Faro
+        castle: Castello
+        cave_entrance: "Entrata di grotta"
+        information: "Ufficio informazioni turistiche"
+        memorial: Memoriale
+        theme_park: "Parco divertimenti"
+        tower: Torre
+        viewpoint: "Belvedere"
+      unknown:
+        unknown: Sconosciuto

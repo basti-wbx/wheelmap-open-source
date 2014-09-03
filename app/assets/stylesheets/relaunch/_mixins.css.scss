@@ -1,0 +1,58 @@
+/* @author 14islands.com
+ * SASS mixins for future proof resolution media query
+ */
+
+@mixin if-min-resolution($dppx) {
+  @include if-resolution(min, $dppx) {
+    @content;
+  }
+}
+
+@mixin if-max-resolution($dppx) {
+  @include if-resolution(max, $dppx) {
+    @content;
+  }
+}
+
+@mixin if-resolution($prefix, $dppx) {
+  // 1px = 96dpi
+  $dpi: $dppx * 96;
+  @media
+    (-webkit-#{$prefix}-device-pixel-ratio: #{$dppx}),
+    (   #{$prefix}--moz-device-pixel-ratio: #{$dppx}),
+    (     -o-#{$prefix}-device-pixel-ratio: #{$dppx*2}/2),
+    (    -ms-#{$prefix}-device-pixel-ratio: #{$dppx}),
+    (        #{$prefix}-device-pixel-ratio: #{$dppx}),
+    (                #{$prefix}-resolution: #{$dpi}dpi),
+    (                #{$prefix}-resolution: #{$dppx}dppx) {
+      @content;
+  }
+}
+
+@mixin highlight($color: rgba(0,0,0,0)) {
+  -webkit-tap-highlight-color: $color;
+  -ms-interpolation-mode: bicubic;
+  ::-moz-selection { }
+}
+
+@mixin headline-gradient() {
+  background-color: $dark-blue;
+  @include filter-gradient(lighten($dark-blue, 10%), $dark-blue, vertical);
+  @include background-image(linear-gradient(lighten($dark-blue, 10%), $dark-blue));
+}
+
+@mixin wheelchair($status, $color, $text-shadow: 0 1px 0 darken($color, 23%)) {
+  .#{$status} {
+    .popover-title {
+      background-color: darken($color, 5%);
+      color: $white;
+      @include text-shadow($text-shadow);
+    }
+  }
+
+  .wheelchair.#{$status} {
+    @include buttonBackground($color, darken($color, 10%), $white, $text-shadow);
+    font-weight: bold;
+    border: 1px solid darken($color, 23%);
+  }
+}

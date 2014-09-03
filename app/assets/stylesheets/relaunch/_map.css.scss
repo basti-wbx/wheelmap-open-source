@@ -1,0 +1,39 @@
+#wheelmap {
+  .leaflet-container {
+    position: absolute;
+    top: $headerHeight + $toolbarHeight;
+    bottom: $footerHeight + 2;
+    left: 0;
+    width: 100%;
+    background: #E8E0D8;
+    z-index: 50;
+
+    @media screen and (max-width:$breakTablet) {
+      top: $headerHeight;
+      bottom: $toolbarHeight;
+    }
+  }
+
+  .flash-wrapper {
+    top: 0px;
+  }
+}
+
+#mapbox_logo {
+  position:absolute;
+  left:5px;
+  bottom:3px;
+  z-index:99999;
+  display:block;
+  width:65px;
+  height:20px;
+  background-position:0px -30px;
+  text-indent:-9999px;
+  overflow:hidden;
+  background-repeat:no-repeat;
+  background-image:url('mapbox_logo.png');
+
+  @media screen and (max-width:$breakPhone) {
+    bottom: 13px
+  }
+}

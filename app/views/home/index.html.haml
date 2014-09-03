@@ -1,0 +1,6 @@
+#wheelmap
+= render :partial => 'overlay'
+
+- content_for :javascript do
+  = javascript_include_tag 'app'
+  = javascript_include_tag "i18n/#{I18n.locale}"

@@ -1,0 +1,16 @@
+a {
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  @include transition-property(color);
+  @include transition-duration($link-transition-duration);
+
+  &:hover,
+  &:visited {
+    text-decoration: inherit;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

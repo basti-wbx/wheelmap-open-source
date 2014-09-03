@@ -1,0 +1,77 @@
+{ "conditions":
+    {
+      "format":"json",
+      "page":1,
+      "per_page":6,
+      "locale":"de"
+    },
+  "meta":
+    {
+      "page":1,
+      "num_pages":17,
+      "item_count":6,
+      "item_count_total":102
+    },
+  "node_types":[
+    {
+      "id":1,
+      "identifier":"veterinary",
+      "icon":"/images/icons/hospital.png",
+      "localized_name":"Tierarzt",
+      "category":{
+        "id": 6,
+        "identifier": "misc"
+      }
+    },
+    {
+      "id":3,
+      "identifier":"public_building",
+      "icon":"/images/icons/bank.png",
+      "localized_name":"\u00d6ffentliches Geb\u00e4ude",
+      "category":{
+        "id": 3,
+        "identifier": "government"
+      }
+    },
+    {
+      "id":23,
+      "identifier":"hardware",
+      "icon":"/images/icons/wrench.png",
+      "localized_name":"Eisenwarenladen",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
+    },
+    {
+      "id":7,
+      "identifier":"atm",
+      "icon":"/images/icons/credit-cards.png",
+      "localized_name":"Geldautomat",
+      "category":{
+        "id": 1,
+        "identifier": "bank"
+      }
+    },
+    {
+      "id":42,
+      "identifier":"convenience",
+      "icon":"/images/icons/shopping-basket.png",
+      "localized_name":"Sp\u00e4tkauf",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
+    },
+    {
+      "id":667,
+      "identifier":"butcher",
+      "icon":"/images/icons/shopping-basket.png",
+      "localized_name":"Fleischer",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
+    }
+  ]
+}

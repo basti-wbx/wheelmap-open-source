@@ -1,0 +1,79 @@
+#api_docs
+  = render :partial => 'api/docs/resource_links'
+  %h2 Resource Users
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/users/authenticate"
+        %span.optional> ?email
+        %span.optional> &password
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p
+            Authenticate a given user with email & password. If the email&password combination is correct and the user has connected it's wheelmap account with the OSM account, the API will return the user's API key. If the combination is correct, but the user has no osm credentials, the API will answer 403 "Application needs to be authorized". Send the user to http://wheelmap.org/users/:user_id/edit to connect with osm. If combination is not correct, API answers 400, "Authorization failed"
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td email*
+                %td string
+                %td The user's email address
+              %tr.even
+                %td password*
+                %td string
+                %td The user's password
+
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#locales_representation_json Example locales representation. (application/json)
+    %pre=render :file => 'api/docs/resources/_users.json'
+    .resource
+      %h3
+        ="/api/users/accept_terms"
+        %span> ?terms_accepted
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p
+            Any client can declare on behalf of the authenticated user, that this given user has willfully accepted wheelmap.org's terms of usage and the privacy policy. The terms and the privacy policy have to be presented to the user separately, or a link to the terms and the privacy policy has to be provided. Please use the following url:
+            =link_to "http://blog.wheelmap.org/was-ist-wheelmap/terms/", "http://blog.wheelmap.org/was-ist-wheelmap/terms/"
+            %br
+            =link_to "http://blog.wheelmap.org/was-ist-wheelmap/privacy/", "http://blog.wheelmap.org/was-ist-wheelmap/privacy/"
+          %p
+            %b IMPORTANT:
+            The user has to accept both terms and privacy policy in order the update or create new nodes as well as upload photos. The server will reject such requests unless the user accepted.
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td terms_accepted*
+                %td string
+                %td Can be one of the following values. 'true', 'yes', '1' for ACCEPTED and 'false', 'no', '0' for DENIED.
+              %tr.even
+                %td privacy_accepted*
+                %td string
+                %td Can be one of the following values. 'true', 'yes', '1' for ACCEPTED and 'false', 'no', '0' for DENIED.
+
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#locales_representation_json Example locales representation. (application/json)
+    %pre=render :file => 'api/docs/resources/_users.json'

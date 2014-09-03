@@ -1,0 +1,13 @@
+$green: #6AA74A;
+$dark-blue: #334557;
+$dark-blue-light: desaturate(lighten($dark-blue, 60%), 10%);
+
+$yellow-gray: #5C554E;
+$orange-gray: #E1DED4;
+$gray:        #555;
+$grayLight:   #999;
+
+$wheelchair-yes: #97C34E;
+$wheelchair-limited: #F19D46;
+$wheelchair-no: #D6382F;
+$wheelchair-unknown: lighten(black, 70%);
