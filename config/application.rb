@@ -73,6 +73,9 @@ module Wheelmap
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Fill in a random hash for generating integrity hash for cookie session data
+    # config.secret_token = "some secret phrase of at least 30 characters"
 
     config.to_prepare do
       Devise::SessionsController.layout "simple"
