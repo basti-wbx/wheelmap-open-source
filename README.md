@@ -2,6 +2,8 @@
 
 Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!
 
+This Repository is the source code of the website [Wheelmap.org](http://wheelmap.org/).
+
 ## Installation
 
 ### Requirements
@@ -75,6 +77,4 @@ Finally startup a local rails server
 
     bundle exec rails server
 
-And visit the website in your browser
-
-    http://0.0.0.0:3000/map
+And visit the website in your browser: http://0.0.0.0:3000/map
