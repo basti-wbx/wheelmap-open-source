@@ -48,11 +48,15 @@ Restart your shell and install bundler:
 
 ## Getting started
 
-Copy the example openstreetmap config and set it right:
+Copy the example application config:
+
+    cp config/application.yml.sample config/application.yml
+
+Copy the example openstreetmap config
 
     cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
 
-Copy the example database config and set it right:
+Copy the example database config and edit accordingly:
 
     cp config/database.SAMPLE.yml config/database.yml
 
