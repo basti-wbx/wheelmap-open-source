@@ -53,6 +53,18 @@ Restart your shell and install bundler:
 Copy the example application config:
 
     cp config/application.yml.sample config/application.yml
+    
+In the `application.rb` uncomment the `config.secret_token` option and fill it with a random secret for generating an integrity hash for cookie session data.
+
+    module Wheelmap
+      class Application < Rails::Application
+        # ...
+        
+        # Fill in a random hash for generating integrity hash for cookie session data
+        config.secret_token = "some secret phrase of at least 30 characters"
+        
+      end
+    end
 
 Copy the example openstreetmap config
 
@@ -77,4 +89,4 @@ Finally startup a local rails server
 
     bundle exec rails server
 
-And visit the website in your browser: http://0.0.0.0:3000/map
+And visit the website in your browser: http://0.0.0.0:3000
