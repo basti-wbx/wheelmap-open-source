@@ -9,7 +9,6 @@ capybara-*.html
 /doc
 /db/*.sqlite3
 /public/system
-/public/uploads
 /coverage/
 /spec/tmp
 **.orig
@@ -33,8 +32,6 @@ config/application.yml
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
-.ruby-version
-.ruby-gemset
 
 db/*.sqlite3
 db/data/*.csv
