@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def index
     render
   end
+
+  def angular
+    render
+  end
 end

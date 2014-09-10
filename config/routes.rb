@@ -23,6 +23,10 @@ Wheelmap::Application.routes.draw do
     match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
   end
 
+  scope "angular_map" do
+    root :to => 'home#angular'
+  end
+
   devise_for :users, :skip => [:sessions],
                      :controllers => {
                        :confirmations      => 'confirmations',

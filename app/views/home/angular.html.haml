@@ -1,0 +1,12 @@
+%div#wheelmap{"ng-app" => "wheelmap"}
+  %div{"ng-controller" => "GeoJSONController"}
+    %leaflet{center: 'berlin', geojson: "geojson", tiles: "tiles", defaults: "defaults", :"event-broadcast" => "events", bounds: "bounds"}
+
+  %script{:id => "popup.html", :type => "text/ng-template"}
+    %p
+      This is the content of the template:
+      %a{:"ng-click" => "clickPopup()"}
+        {{test}}
+
+- content_for :javascript do
+  = javascript_include_tag 'angular_app'

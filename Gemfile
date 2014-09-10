@@ -60,6 +60,7 @@ group :default do
   gem 'geocoder'
   gem 'ruby-progressbar'
   gem 'figaro'
+  gem 'angular-rails'
 end
 
 group :assets do
